@@ -18,13 +18,11 @@ public class Field {
         return FIELD_SIZE;
     }
 
-    public Figure getFigure(final Point point) throws InvalidPointException, PointAlreadyOccupaiedException {
+    public Figure getFigure(final Point point) throws InvalidPointException {
         if (!checkPoint(point)) {
             throw new InvalidPointException();
         }
-        if (field[point.x][point.y] != null) {
-            throw new PointAlreadyOccupaiedException();
-        }
+
         return field[point.x][point.y];
     }
 
